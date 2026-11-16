@@ -1,17 +1,401 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>ToneForge 3D</title>
-</head>
-<body>
-    <h1>Welcome to ToneForge 3D</h1>
-    <p>Premium Digital Guitar Models</p>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <h2>Products</h2>
-    <ul>
-        <li>Classic Single-Cut Guitar STL - $4.99</li>
-        <li>Modern Metal Guitar STL - $5.99</li>
-        <li>Vintage Hollow Body STL - $4.99</li>
-    </ul>
+<title>SixString Prints</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#111;
+color:white;
+line-height:1.6;
+}
+
+header{
+background:linear-gradient(to right,#5c0000,#990000);
+padding:20px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav{
+display:flex;
+justify-content:center;
+gap:40px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-weight:bold;
+font-size:18px;
+}
+
+nav a:hover{
+color:gold;
+}
+
+.hero{
+height:500px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,.6),
+rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=1600');
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:4rem;
+color:gold;
+}
+
+.hero p{
+font-size:1.4rem;
+margin-top:15px;
+}
+
+.btn{
+background:gold;
+color:black;
+padding:12px 25px;
+margin-top:20px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+}
+
+section{
+padding:60px 10%;
+}
+
+h2{
+text-align:center;
+margin-bottom:30px;
+font-size:2.2rem;
+color:gold;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:#1f1f1f;
+padding:20px;
+border-radius:12px;
+text-align:center;
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:15px;
+}
+
+.card button{
+background:#990000;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:6px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.card button:hover{
+background:#c70000;
+}
+
+.review{
+background:#1f1f1f;
+padding:20px;
+margin:20px 0;
+border-left:5px solid gold;
+}
+
+.checkout{
+background:#1f1f1f;
+padding:30px;
+border-radius:12px;
+max-width:700px;
+margin:auto;
+}
+
+.checkout input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:6px;
+}
+
+.checkout button{
+background:gold;
+padding:12px;
+border:none;
+width:100%;
+font-weight:bold;
+cursor:pointer;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#181818;
+margin-top:30px;
+}
+
+.product-detail{
+display:none;
+margin-top:10px;
+background:#2b2b2b;
+padding:15px;
+border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<a href="#home">Home</a>
+<a href="#store">Store</a>
+<a href="#reviews">Reviews</a>
+<a href="#checkout">Cart</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<h1>SixString Prints</h1>
+<p>Download. Print. Rock.</p>
+<a href="#store" class="btn">Browse Models</a>
+</section>
+
+<section id="store">
+
+<h2>Guitar STL Store</h2>
+
+<div class="products">
+
+<div class="card">
+
+<img src="YOURIMAGE1.jpg">
+
+<h3>Vintage Single-Cut STL</h3>
+
+<p>$4.99</p>
+
+<button onclick="showProduct('p1')">
+View Details
+</button>
+
+<button onclick="addToCart('Vintage Single-Cut STL')">
+Add To Cart
+</button>
+
+<div class="product-detail" id="p1">
+Perfect for classic rock collectors and
+display prints. Optimized for FDM and resin printers.
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="YOURIMAGE2.jpg">
+
+<h3>Flying V STL</h3>
+
+<p>$5.99</p>
+
+<button onclick="showProduct('p2')">
+View Details
+</button>
+
+<button onclick="addToCart('Flying V STL')">
+Add To Cart
+</button>
+
+<div class="product-detail" id="p2">
+Aggressive styling inspired by iconic
+metal guitars.
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="YOURIMAGE3.jpg">
+
+<h3>Modern Metal STL</h3>
+
+<p>$5.99</p>
+
+<button onclick="showProduct('p3')">
+View Details
+</button>
+
+<button onclick="addToCart('Modern Metal STL')">
+Add To Cart
+</button>
+
+<div class="product-detail" id="p3">
+Sharp contours and modern features for
+metal fans.
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="YOURIMAGE4.jpg">
+
+<h3>Classic Strat STL</h3>
+
+<p>$4.99</p>
+
+<button onclick="showProduct('p4')">
+View Details
+</button>
+
+<button onclick="addToCart('Classic Strat STL')">
+Add To Cart
+</button>
+
+<div class="product-detail" id="p4">
+A timeless design suitable for any
+collection.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="reviews">
+
+<h2>Customer Reviews</h2>
+
+<div class="review">
+★★★★★ <br>
+"The print quality was incredible. Printed first try!"
+<br><br>
+- Jake M.
+</div>
+
+<div class="review">
+★★★★★ <br>
+"Very detailed STL files and easy to scale."
+<br><br>
+- Sarah T.
+</div>
+
+<div class="review">
+★★★★☆ <br>
+"Great designs and excellent instructions."
+<br><br>
+- Ryan P.
+</div>
+
+</section>
+
+<section id="checkout">
+
+<h2>Shopping Cart</h2>
+
+<div class="checkout">
+
+<p id="cartItems">
+No items selected.
+</p>
+
+<br>
+
+<input type="text" placeholder="Full Name">
+
+<input type="email" placeholder="Email Address">
+
+<input type="text" placeholder="Street Address">
+
+<input type="text" placeholder="Credit Card Number">
+
+<input type="text" placeholder="Expiration Date">
+
+<input type="text" placeholder="CVV">
+
+<button onclick="fakePurchase()">
+Complete Purchase
+</button>
+
+</div>
+
+</section>
+
+<footer>
+<h3>SixString Prints</h3>
+<p>
+Premium STL Guitar Models for Makers & Musicians
+</p>
+</footer>
+
+<script>
+
+let cart=[];
+
+function addToCart(product){
+cart.push(product);
+
+document.getElementById("cartItems").innerHTML=
+"<strong>Items Selected:</strong><br>"
++ cart.join("<br>");
+}
+
+function showProduct(id){
+
+let item=document.getElementById(id);
+
+if(item.style.display==="block"){
+item.style.display="none";
+}
+else{
+item.style.display="block";
+}
+
+}
+
+function fakePurchase(){
+
+alert(
+"Demo Purchase Complete!\n\nNo payment was processed.\n\nThis website was created for an educational class project."
+);
+
+}
+
+</script>
+
 </body>
 </html>
